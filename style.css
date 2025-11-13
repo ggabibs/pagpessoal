@@ -1,1 +1,196 @@
+/* Reset Básico para melhor consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Variáveis de Cores (Opcional, mas útil para mudanças rápidas) */
+:root {
+    --primary-color: #0077b6; /* Azul vibrante (pode ser alterado) */
+    --secondary-color: #48cae4; /* Azul mais claro */
+    --text-color: #333;
+    --background-color: #f4f4f9; /* Fundo leve */
+    --card-background: #ffffff; /* Fundo dos elementos */
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    padding: 40px;
+    margin: 20px 0;
+}
+
+/* Estilos do Perfil */
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 0 8px rgba(0, 119, 182, 0.2); /* Borda externa sutil */
+    margin-bottom: 15px;
+}
+
+.profile h1 {
+    color: var(--primary-color);
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+.profile h2 {
+    color: var(--text-color);
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+/* Linha Divisória */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+/* Seções de Conteúdo */
+.about-me, .skills {
+    margin-bottom: 30px;
+}
+
+.about-me h3, .skills h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Habilidades */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.skills-list li:hover {
+    transform: translateY(-2px);
+    background-color: var(--primary-color);
+}
+
+/* Links Sociais (Ícones) */
+.social-links {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.social-links p {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.social-links .icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Botão de Ação */
+.action-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #005f99; /* Um tom mais escuro */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Garante que fique na parte inferior */
+    color: #666;
+    font-size: 0.85em;
+}
+
+/* Media Query para telas menores (Responsividade) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .profile h1 {
+        font-size: 1.8em;
+    }
+
+    .social-links .icons {
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 1.8em;
+    }
+
+    .skills-list li {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+}
