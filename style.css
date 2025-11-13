@@ -1,130 +1,109 @@
-/* Reset Básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Definição de variáveis CSS para fácil alteração de cores */
 :root {
-    --primary-color: #3f51b5; /* Azul universitário (pode mudar) */
+    --primary-pink: #ff69b4; /* Rosa Choque/Pink */
+    --light-pink: #f8c8dc;   /* Rosa Claro */
+    --background-color: #f4f4f9;
     --text-color: #333;
-    --background-color: #e8eaf6; /* Fundo muito claro */
-    --card-background: #ffffff;
-    --shadow-subtle: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
-}
-
-.card {
-    max-width: 400px; /* Mais estreito para focar nos links */
-    width: 100%;
-    background-color: var(--card-background);
-    border-radius: 12px;
-    box-shadow: var(--shadow-subtle);
-    padding: 30px;
+    margin: 0;
     text-align: center;
 }
 
-/* Estilos do Perfil */
-.profile {
-    margin-bottom: 25px;
+.container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+    /* Detalhe de borda rosa */
+    border-top: 5px solid var(--primary-pink);
+}
+
+/* Estilo para a foto de perfil */
+.profile-photo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .profile-photo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--primary-color);
-    margin-bottom: 10px;
+    border: 5px solid var(--primary-pink); /* Borda rosa ao redor da foto */
+    transition: transform 0.3s ease-in-out;
 }
 
-.profile h1 {
-    font-size: 1.8em;
-    color: var(--primary-color);
+/* Efeito simples de foco na foto para interação */
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    color: var(--primary-pink);
+    font-size: 2em;
     margin-bottom: 5px;
 }
 
-.profile h2 {
-    font-size: 0.9em;
-    color: #666;
-    font-weight: 400;
-}
-
-/* Biografia */
 .bio {
-    margin-bottom: 30px;
-    padding: 0 10px;
-    font-size: 1em;
-    color: #555;
+    margin-bottom: 25px;
+    color: #666;
 }
 
-/* Links Sociais */
-.social-links h3 {
-    font-size: 1.1em;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.social-links .icons {
+/* Estilo para os ícones das redes sociais */
+.social-links {
+    margin: 25px 0;
     display: flex;
     justify-content: center;
-    gap: 30px; /* Maior espaçamento para os ícones */
-    margin-bottom: 30px;
+    gap: 20px;
 }
 
+.icon {
+    font-size: 2.5em;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Cor base dos ícones */
 .social-links a {
-    color: var(--primary-color);
-    font-size: 2.5em; /* Ícones grandes */
-    transition: color 0.3s, transform 0.3s;
-}
-
-/* Cores específicas no hover para cada rede */
-.social-links a:nth-child(1):hover { /* WhatsApp */
-    color: #25D366;
-    transform: scale(1.15);
-}
-
-.social-links a:nth-child(2):hover { /* Instagram */
-    color: #E1306C;
-    transform: scale(1.15);
-}
-
-.social-links a:nth-child(3):hover { /* Spotify */
-    color: #1DB954;
-    transform: scale(1.15);
-}
-
-
-/* Botão de Ação */
-.action-button {
-    margin-top: 20px;
-}
-
-.btn {
-    display: block;
-    width: 100%;
-    padding: 12px 20px;
-    background-color: var(--primary-color);
-    color: white;
+    color: var(--light-pink);
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-    border: none;
 }
 
-.btn:hover {
-    background-color: #303f9f;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+/* Efeito ao passar o mouse: a cor primária rosa e um pequeno 'salto' */
+.social-links a:hover {
+    color: var(--primary-pink);
+    transform: translateY(-5px);
+}
+
+/* Estilo para o texto de detalhe */
+.detail-text {
+    margin-top: 30px;
+    font-style: italic;
+    color: var(--primary-pink);
+    font-weight: bold;
+}
+
+/*
+ * ANIMAÇÃO CSS (Opcional - Usada em conjunto com o JS)
+ * Efeito de pulsação no texto de detalhe
+*/
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); }
+}
+
+.pulsing {
+    animation: pulse 1.5s infinite;
 }
